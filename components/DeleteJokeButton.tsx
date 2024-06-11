@@ -3,9 +3,11 @@
 import React, { useTransition } from 'react';
 import Button from '@/components/Button';
 import { deleteJoke } from '@/lib/actions/deleteJoke';
+import { useNavigate } from './ClientRouter';
 
 export default function DeleteJokeButton({ jokeid }: { jokeid: string }) {
   const [isPending, startTransition] = useTransition();
+  const navigate = useNavigate();
 
   return (
     <Button
@@ -13,6 +15,7 @@ export default function DeleteJokeButton({ jokeid }: { jokeid: string }) {
       onClick={() => {
         startTransition(async () => {
           await deleteJoke(jokeid);
+          navigate('all');
         });
       }}
     >

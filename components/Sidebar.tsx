@@ -1,8 +1,8 @@
 import React from 'react';
 import JokesList from './JokesList';
-import NavButton from './NavButton';
 import RandomJokeButton from './RandomJokeButton';
 import Outline from './Outline';
+import Link from './Link';
 
 export default function Sidebar() {
   return (
@@ -11,7 +11,7 @@ export default function Sidebar() {
       <Outline text="Here are a few more jokes to check out:">
         <JokesList />
       </Outline>
-      <NavButton href="/jokes/new">Add your own</NavButton>
+      <Link href="new">Add your own</Link>
     </div>
   );
 }
